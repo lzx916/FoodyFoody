@@ -1,0 +1,26 @@
+<!--pages/articleDetail-lzx/articleDetail-lzx.wxml-->
+<view class="detail-container">
+  <!-- 轮播图 -->
+  <swiper class="swiper" indicator-dots="true" autoplay="true">
+    <swiper-item wx:for="{{article.images}}">
+      <image class="swiper-image" src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 美食名字和描述 -->
+  <view class="title-container">
+    <view class="title">{{article.title}}</view>
+    <view class="description">{{article.content}}</view>
+  </view>
+  <!-- 用户评论 -->
+  <view class="comment-container">
+    <view class="comment-title">用户评论</view>
+    <view class="comment-list">
+      <view wx:for="{{comments}}" wx:key="{{item.id}}">
+        <view class="comment">
+          <view class="comment-user">{{item.user}}</view>
+          <view class="comment-content">{{item.content}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
