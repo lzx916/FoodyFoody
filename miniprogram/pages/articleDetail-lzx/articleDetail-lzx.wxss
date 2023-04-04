@@ -1,0 +1,64 @@
+/* pages/articleDetail-lzx/articleDetail-lzx.wxss */
+.detail-container {
+  padding: 20rpx;
+}
+
+/* 轮播图样式 */
+.swiper {
+  height: 600rpx;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 美食名字和描述样式 */
+.title-container {
+  margin-top: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.description {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 1.5;
+}
+
+/* 用户评论样式 */
+.comment-container {
+  margin-top: 20rpx;
+}
+
+.comment-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.comment-list {
+  border-top: 1px solid #eee;
+}
+
+.comment {
+  padding: 20rpx 0;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-user {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+
+.comment-content {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.5;
+}

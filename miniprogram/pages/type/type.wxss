@@ -1,0 +1,13 @@
+/* pages/type/type.wxss */
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  flex: 0 0 70px; /* 左侧分类固定宽度为70px */
+}
+
+.foods {
+  flex: 1; /* 右侧图片展示占满剩余宽度 */
+}

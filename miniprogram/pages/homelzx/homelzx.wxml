@@ -3,14 +3,8 @@
 
   <!-- 轮播图组件 -->
   <swiper class="swiper" indicator-dots="true" autoplay="true">
-    <swiper-item>
-      <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/4.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/5.jpg"></image>
-    </swiper-item>
-    <swiper-item>
-      <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/6.jpg"></image>
+    <swiper-item wx:for="{{swiper}}">
+      <image src="{{item}}"/>
     </swiper-item>
   </swiper>
 
@@ -40,33 +34,13 @@
 
   <!-- 美食分享内容 -->
   <view class="food-list">
-    <view class="food-list-title">今日好菜
+    <view class="food-list-title">今日分享
     </view>
     <view class="food-list-item">
-      <view class="food-item">
-        <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/images/3.jpg"></image>
-        <text class="food-name">炭火烤肉</text>
-        <text class="food-describe">文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</text>
-      </view>
-      <view class="food-item">
-        <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/images/2.jpg"></image>
-        <text class="food-name">炸鱼薯条</text>
-        <text class="food-describe">文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</text>
-      </view>
-      <view class="food-item">
-        <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/images/1.jpg"></image>
-        <text class="food-name">豚骨拉面</text>
-        <text class="food-describe">炭火文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述烤肉</text>
-      </view>
-      <view class="food-item">
-        <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/images/4.jpg"></image>
-        <text class="food-name">飘香炒饭</text>
-        <text class="food-describe">文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</text>
-      </view>
-      <view class="food-item">
-        <image src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/images/5.jpg"></image>
-        <text class="food-name">肥牛冒菜</text>
-        <text class="food-describe">文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述文字描述</text>
+      <view class="food-item" wx:for="{{articles}}" wx:key="_id" bindtap="gotoDetail" data-index="{{item._id}}">
+        <image src="{{item.images[0]}}"/>
+        <text class="food-name">{{item.title}}</text>
+        <text class="food-describe">{{item.content}}</text>
       </view>
     </view>
 

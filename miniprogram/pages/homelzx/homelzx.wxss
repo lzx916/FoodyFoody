@@ -90,6 +90,7 @@
   font-size: 26rpx;
   overflow: hidden;
   padding-left: 5px;
+  padding-bottom: 5px;
   white-space: nowrap;
   text-overflow: ellipsis;
 }

@@ -1,7 +1,13 @@
 {
   "pages": [
-    "pages/publish/publish",
     "pages/homelzx/homelzx",
+    "pages/articleDetail-lzx/articleDetail-lzx",
+    "pages/restaurant/restaurant",
+    "pages/westernFood/westernFood",
+    "pages/chineseFood/chineseFood",
+    "pages/drink/drink",
+    "pages/type/type",
+    "pages/publish/publish",
     "pages/home/home",
     "pages/me/me",
     "pages/about-me/about-me",
