@@ -4,7 +4,8 @@ App({
 
   onLaunch: function() {
     // var env = 'cfxy-mall-pxwnv';
-    var env = 'hsf-blog-product-jqt54'
+    // var env = 'hsf-blog-product-jqt54'
+    var env = 'cloud1-6gb3kr0dd5a291f1'
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {

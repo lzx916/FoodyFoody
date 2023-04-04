@@ -1,4 +1,9 @@
 // pages/publish/publish.js
+const util = require("../../utils/util.js")
+const app = getApp()
+const db = wx.cloud.database({
+  env: app.env
+})
 Page({
 
   /**
@@ -7,6 +12,31 @@ Page({
   data: {
 
   },
+
+  handleTap: function() {
+    console.log('按钮被点击了');
+    wx.cloud.callFunction({
+      name: 'articleController',
+      data: {
+        dbName: 'article',
+        // pageIndex: _this.data.page,
+        // pageSize: _this.data.size,
+        // orderBy: 'create_time'
+      },
+      success: res => {
+        // res.data 包含该记录的数据
+        console.log(res)
+      },
+      fail: err => {
+        console.error('[云函数]调用失败', err);
+      },
+      complete: res => {
+
+      }
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载
