@@ -10,25 +10,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    myData: null
   },
 
-  handleTap: function() {
-    console.log('按钮被点击了');
+  handleTap: function () {
     wx.cloud.callFunction({
-      name: 'articleController',
+      name: 'getDataPageByFilter',
       data: {
         dbName: 'article',
-        // pageIndex: _this.data.page,
-        // pageSize: _this.data.size,
-        // orderBy: 'create_time'
+        pageIndex: 1,
+        pageSize: 5,
+        filter: {
+        },
+        orderBy: 'gmt_create'
       },
       success: res => {
         // res.data 包含该记录的数据
         console.log(res)
+        this.setData({ myData: res.result.data })
       },
       fail: err => {
-        console.error('[云函数]调用失败', err);
+        console.error('[云函数]调用失败', err)
       },
       complete: res => {
 

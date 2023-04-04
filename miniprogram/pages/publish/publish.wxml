@@ -1,2 +1,6 @@
 <!--pages/publish/publish.wxml-->
 <button bindtap="handleTap">测试</button>
+<view wx:for="{{myData}}" wx:key="id">
+  <text>{{item.title}}</text>
+  <text>{{item.gmt_create}}</text>
+</view>
