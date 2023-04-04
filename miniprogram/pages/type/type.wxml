@@ -1,0 +1,16 @@
+<!--pages/type/type.wxml-->
+<!-- 在wxml中定义左侧的分类列表 -->
+<view class="container">
+  <scroll-view class="sidebar" scroll-y>
+    <view class="category-item" wx:for="{{ categories }}" wx:key="index" bindtap="selectCategory">
+      {{ item }}
+    </view>
+  </scroll-view>
+
+  <!-- 在wxml中定义右侧的食物图片 -->
+  <view class="foods">
+    <view class="food" wx:for="{{ foodColumns }}" wx:key="index">
+      <image class="food-image" src="{{ item }}"></image>
+    </view>
+  </view>
+</view>
