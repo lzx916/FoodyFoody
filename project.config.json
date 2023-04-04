@@ -36,7 +36,8 @@
     "minifyWXSS": true,
     "showES6CompileOption": false,
     "minifyWXML": true,
-    "condition": false
+    "condition": false,
+    "ignoreUploadUnusedFiles": true
   },
   "appid": "wxf94d78ce1b635ed5",
   "projectname": "hsf_blog",
