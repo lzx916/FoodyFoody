@@ -2,11 +2,12 @@
 const cloud = require('wx-server-sdk')
 cloud.init({
   // API 调用都保持和云函数当前所在环境一致
-  // env: cloud.DYNAMIC_CURRENT_ENV
-  env: "cloud1-6gb3kr0dd5a291f1"
+  env: cloud.DYNAMIC_CURRENT_ENV
+  // env: "cloud1-6gb3kr0dd5a291f1"
 })
 const db = cloud.database()
 const _ = db.command
+
 // 云函数入口函数
 exports.main = async (event, context) => {
   try {

@@ -15,17 +15,17 @@ Page({
     showText: '登录获取更多权限',
     openid: '',
   },
+
   onLoad: function () {
     if (!wx.cloud) {
       return
     }
     var openid = wx.getStorageSync("openid");
-    // wx:if="{{openid == 'oJX0Y47QUSPd3lkaGgJYWFqfn944' || openid == 'oJX0Y4xP5Hny2v3dzt9CaDwJrZ6w'}}"
-    if(openid == 'oJX0Y47QUSPd3lkaGgJYWFqfn944' || openid == 'oJX0Y4xP5Hny2v3dzt9CaDwJrZ6w'){
-      this.setData({
-        functionList:["我的浏览", "我的点赞", "意见反馈", "客服", "更新日志", "消息订阅", "获取源码"]
-      })
-    }
+    // if(openid == 'oJX0Y47QUSPd3lkaGgJYWFqfn944' || openid == 'oJX0Y4xP5Hny2v3dzt9CaDwJrZ6w'){
+    //   this.setData({
+    //     functionList:["我的浏览", "我的点赞", "意见反馈", "客服", "更新日志", "消息订阅", "获取源码"]
+    //   })
+    // }
     if (!openid || openid == '') {
       this.getUserOpenId();
     } else {
@@ -68,7 +68,7 @@ Page({
       name: 'getUserOpenId',
       data: {},
       success: res => {
-        console.log("用户的openID=" + res.result.openid)
+        // console.log("用户的openID=" + res.result.openid)
         wx.setStorageSync("openid", res.result.openid)
         this.setData({
           openid: openid

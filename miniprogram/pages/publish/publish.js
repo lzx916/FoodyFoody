@@ -12,12 +12,35 @@ Page({
   data: {
     myData: null
   },
+  addComment: function () {
+    wx.cloud.callFunction({
+      name: 'addComment',
+      data: {
+        article_id: "fc8e6465642a64080728bb49201a102f",
+        comment: "评论3",
+        _openid: "event._openid",
+        avatarUrl: "event.avatarUrl",
+        nickName: "event.nickName",
+        gmtCreate: new Date()
+      },
+      success: res => {
+        // res.data 包含该记录的数据
+        console.log(res)
+      },
+      fail: err => {
+        console.error('[云函数]调用失败', err)
+      },
+      complete: res => {
+
+      }
+    })
+  },
 
   handleTap: function () {
     wx.cloud.callFunction({
       name: 'getDataPageByFilter',
       data: {
-        dbName: 'article',
+        dbName: 'article', //dbName必传
         pageIndex: 1,
         pageSize: 5,
         filter: {
