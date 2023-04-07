@@ -12,6 +12,34 @@ Page({
   data: {
     myData: null
   },
+  //查看评论
+  getComments: function () {
+    wx.cloud.callFunction({
+      name: 'getDataPageByFilter',
+      data: {
+        dbName: 'comment', //dbName必传
+        pageIndex: 1,
+        pageSize: 10,
+        filter: {
+          article_id: "fc8e6465642a64080728bb49201a102f"
+        },
+        orderBy: 'gmtCreate'
+      },
+      success: res => {
+        // res.data 包含该记录的数据
+        console.log(res)
+        this.setData({ myData: res.result.data })
+      },
+      fail: err => {
+        console.error('[云函数]调用失败', err)
+      },
+      complete: res => {
+
+      }
+    })
+  },
+
+  //评论
   addComment: function () {
     wx.cloud.callFunction({
       name: 'addComment',
