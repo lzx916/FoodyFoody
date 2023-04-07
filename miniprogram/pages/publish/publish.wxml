@@ -1,6 +1,9 @@
 <!--pages/publish/publish.wxml-->
-<button bindtap="handleTap">测试</button>
+<button bindtap="addComment">测试评论</button>
+
+----------
+<button bindtap="getComments">测试查看图文评论</button>
 <view wx:for="{{myData}}" wx:key="id">
-  <text>{{item.title}}</text>
-  <text>{{item.gmt_create}}</text>
+  <text>{{item.comment}}</text>----<text>{{item.gmtCreate}}</text>
 </view>
+
