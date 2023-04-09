@@ -1,20 +1,20 @@
 {
   "pages": [
     "pages/homelzx/homelzx",
+    "pages/all/all",
+    "pages/find/find",
+    "pages/type/type",
+    "pages/cafe/cafe",
     "pages/articleDetail-lzx/articleDetail-lzx",
     "pages/restaurant/restaurant",
     "pages/westernFood/westernFood",
     "pages/chineseFood/chineseFood",
     "pages/drink/drink",
-    "pages/type/type",
     "pages/publish/publish",
     "pages/home/home",
     "pages/me/me",
-    "pages/about-me/about-me",
     "pages/special/special",
-    "pages/ranking/ranking",
     "pages/articleDetail/articleDetail",
-    "pages/articleList/articleList",
     "pages/comment/comment",
     "pages/updateLogs/updateLogs",
     "pages/admin/admin",
@@ -45,6 +45,12 @@
         "iconPath": "images/icon-lzx/fabu.png",
         "selectedIconPath": "images/icon-lzx/fabu-selected.png",
         "text": "发布"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "iconPath": "images/icon-lzx/find.png",
+        "selectedIconPath": "images/icon-lzx/find-selected.png",
+        "text": "饭搭"
       },
       {
         "pagePath": "pages/me/me",

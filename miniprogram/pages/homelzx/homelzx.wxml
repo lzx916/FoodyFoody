@@ -4,7 +4,7 @@
   <!-- 轮播图组件 -->
   <swiper class="swiper" indicator-dots="true" autoplay="true">
     <swiper-item wx:for="{{swiper}}">
-      <image src="{{item}}"/>
+      <image src="{{item}}" mode="widthFix"/>
     </swiper-item>
   </swiper>
 
@@ -12,9 +12,9 @@
   <view class="menu">
     <view class="menu-item" bindtap="onNavigateToType">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/fenlei.png"></image>
-      <text class="menu-text">菜系</text>
+      <text class="menu-text">全部</text>
     </view>
-    <view class="menu-item" bindtap="onNavigateToDrink">
+    <!-- <view class="menu-item" bindtap="onNavigateToDrink">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/kafei.png"></image>
       <text class="menu-text">饮品</text>
     </view>
@@ -25,10 +25,22 @@
     <view class="menu-item" bindtap="onNavigateToWesternFood">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/canpinhui-xican.png"></image>
       <text class="menu-text">西餐</text>
-    </view>
+    </view> -->
     <view class="menu-item" bindtap="onNavigateToRestaurant">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/navicon-ctgl.png"></image>
       <text class="menu-text">餐厅</text>
+    </view>
+    <view class="menu-item" bindtap="onNavigateToCafe">
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/jiudiancanting-.png"></image>
+      <text class="menu-text">咖啡厅</text>
+    </view>
+    <view class="menu-item" bindtap="onNavigateToShop">
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/shop.png"></image>
+      <text class="menu-text">便利店</text>
+    </view>
+    <view class="menu-item" bindtap="onNavigateToMore">
+    <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/more.png"></image>
+    <text class="menu-text">更多</text>
     </view>
   </view>
 
@@ -43,7 +55,7 @@
         <text class="food-describe">{{item.content}}</text>
       </view>
     </view>
-
+    <view class="loading complete">没有更多了</view>
     <!-- 更多美食分享 -->
   </view>
 
