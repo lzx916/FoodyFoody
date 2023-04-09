@@ -13,12 +13,19 @@
   </view>
   <!-- 用户评论 -->
   <view class="comment-container">
-    <view class="comment-title">用户评论</view>
-    <view class="comment-list">
-      <view wx:for="{{comments}}" wx:key="{{item.id}}">
-        <view class="comment">
-          <view class="comment-user">{{item.user}}</view>
-          <view class="comment-content">{{item.content}}</view>
+    <!-- <view class="comment-title">用户评论</view> -->
+    <!-- 总共评论数 -->
+    <view class="total">共{{comments.length}}条评论</view>
+    <!-- 评论框 -->
+    <input confirm-type="send" class="container-inp" value="{{value}}" placeholder="说点什么，让ta也认识看笔记的你" placeholder-class="container-place" bindconfirm="bindconfirm"></input>
+    <!-- 评论列表 -->
+    <view class="comment" wx:for="{{comments}}" wx:key="{{item.id}}">
+      <image class="comment-user-avatar" src="{{item.avatarUrl}}"></image>
+      <view class="comment-right">
+        <view class="comment-user-name">{{item.nickName}}</view>
+        <view class="comment-content">
+          <text class="comment-content-text">{{item.comment}}</text>
+          <text class="comment-content-time">{{item.gmtCreate}}</text>
         </view>
       </view>
     </view>

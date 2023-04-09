@@ -51,6 +51,12 @@ Page({
     })
   },
 
+  onNavigateToCafe() {
+    wx.navigateTo({
+      url: '/pages/cafe/cafe',
+    })
+  },
+
   // 获取首页数据
   getArticles(pageSize=5, pageIndex=1) {
     wx.cloud.callFunction({
