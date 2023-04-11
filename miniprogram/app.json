@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/homelzx/homelzx",
+    "pages/more/more",
+    "pages/shop/shop",
     "pages/all/all",
     "pages/find/find",
     "pages/type/type",

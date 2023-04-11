@@ -10,7 +10,7 @@ Page({
       "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/5.jpg",
       "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/6.jpg"
     ],
-    articles: []
+    articles: [],
   },
 
   gotoDetail: function (e) {
@@ -21,9 +21,9 @@ Page({
     });
   },
 
-  onNavigateToType() {
+  onNavigateToAll() {
     wx.navigateTo({
-      url: '/pages/type/type', // pages前加"/"绝对路径，否则相对路径
+      url: '/pages/all/all', // pages前加"/"绝对路径，否则相对路径
     })
   },
 
@@ -51,6 +51,18 @@ Page({
     })
   },
 
+  onNavigateToShop() {
+    wx.navigateTo({
+      url: '/pages/shop/shop',
+    })
+  },
+
+  onNavigateToMore() {
+    wx.navigateTo({
+      url: '/pages/more/more',
+    })
+  },
+
   onNavigateToCafe() {
     wx.navigateTo({
       url: '/pages/cafe/cafe',
@@ -58,8 +70,8 @@ Page({
   },
 
   // 获取首页数据
-  getArticles(pageSize=5, pageIndex=1) {
-    wx.cloud.callFunction({
+  getArticles: async function(pageSize=5, pageIndex=1) {
+    await wx.cloud.callFunction({
       name: 'getDataPageByFilter',
       data: {
         dbName: 'article',
@@ -73,8 +85,9 @@ Page({
         // res.data 包含该记录的数据
         let oldArticles = this.data.articles  // 翻页数据拼接
         let newArticles = oldArticles.concat(res.result.data)
-        // console.log(res)
+        //console.log(newArticles)
         this.setData({ articles: newArticles })
+        console.log(this.data.articles)
       },
       fail: err => {
         console.error('[云函数]调用失败', err)
@@ -87,22 +100,49 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad(options) {
-    this.getArticles()
+  onLoad: async function(options) {
+    await this.getArticles()
+    // 获取每个article的作者信息，添加新字段userInfo
+    
+    console.log(this.data.articles)
+    this.data.articles.forEach(function(i) {
+      console.log(i.openid)
+    })
+    // var openid = wx.getStorageSync("openid");
+    // if (!openid || openid == '') {
+    //   this.getUserOpenId();
+    // } else {
+    //   console.log("openid========" + openid);
+    //   this.setData({
+    //     openid: openid
+    //   })
+    // }
+    var userInfo = wx.getStorageSync('userInfo')
+    if(userInfo){
+      this.setData({
+        userInfo: userInfo,
+        avatarUrl: userInfo.avatarUrl,
+        // hasUserInfo: true
+      })
+      console.log(userInfo)
+    }else{
+      this.setData({
+        isShowAddPersonView: true
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow() {
-
   },
 
   /**

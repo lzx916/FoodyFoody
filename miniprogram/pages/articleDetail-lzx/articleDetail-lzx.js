@@ -1,4 +1,5 @@
 // pages/articleDetail-lzx/articleDetail-lzx.js
+import util from "../../utils/util.js"
 Page({
 
   /**
@@ -43,6 +44,10 @@ Page({
       success: res => {
         // res.data 包含该记录的数据
         console.log(res)
+        // 格式化日期
+        // res.result.data.forEach(function(item, index, array) {
+        //   res.result.data[index].gmtCreate = util.formatTime(item.gmtCreate)
+        // })
         this.setData({
           comments: res.result.data
         })

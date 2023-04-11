@@ -10,22 +10,10 @@
 
   <!-- 菜单栏 -->
   <view class="menu">
-    <view class="menu-item" bindtap="onNavigateToType">
+    <view class="menu-item" bindtap="onNavigateToAll">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/fenlei.png"></image>
       <text class="menu-text">全部</text>
     </view>
-    <!-- <view class="menu-item" bindtap="onNavigateToDrink">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/kafei.png"></image>
-      <text class="menu-text">饮品</text>
-    </view>
-    <view class="menu-item" bindtap="onNavigateToChineseFood">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/kuaizi-.png"></image>
-      <text class="menu-text">中餐</text>
-    </view>
-    <view class="menu-item" bindtap="onNavigateToWesternFood">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/canpinhui-xican.png"></image>
-      <text class="menu-text">西餐</text>
-    </view> -->
     <view class="menu-item" bindtap="onNavigateToRestaurant">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/navicon-ctgl.png"></image>
       <text class="menu-text">餐厅</text>
@@ -46,13 +34,19 @@
 
   <!-- 美食分享内容 -->
   <view class="food-list">
-    <view class="food-list-title">今日分享
+    <view class="food-list-title">-----今日分享-----
     </view>
     <view class="food-list-item">
       <view class="food-item" wx:for="{{articles}}" wx:key="_id" bindtap="gotoDetail" data-index="{{item._id}}">
         <image src="{{item.images[0]}}"/>
         <text class="food-name">{{item.title}}</text>
-        <text class="food-describe">{{item.content}}</text>
+        <!-- <text class="food-describe">{{item.content}}</text> -->
+        <view class="user-like-container">
+          <view class="user-info">
+            
+          </view>
+          <view class="likes"></view>
+        </view>
       </view>
     </view>
     <view class="loading complete">没有更多了</view>
