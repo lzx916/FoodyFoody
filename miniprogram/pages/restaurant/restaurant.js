@@ -5,7 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    categoryList: [
+      {
+        name: "丽娃中餐厅",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/_zhongcan.png"
+      }, {
+        name: "丽娃西餐厅",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/doufunao.png"
+      }, {
+        name: "丽娃清真餐厅",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/dangao.png"
+      }, {
+        name: "河西一楼",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/xican.png"
+      }, {
+        name: "河西二楼",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/baozi.png"
+      }, {
+        name: "秋林阁",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/chufangyongpin-tangguo.png"
+      }, {
+        name: "河东一楼",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/yu.png"
+      }, {
+        name: "河东二楼",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/mianshi.png"
+      }],
+    restaurants: [],
   },
 
   /**

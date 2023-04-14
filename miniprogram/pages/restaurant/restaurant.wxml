@@ -1,2 +1,27 @@
 <!--pages/restaurant/restaurant.wxml-->
-<text>餐厅</text>
+<view class="container">
+
+  <view class="categoryList">
+    <block wx:for="{{categoryList}}" wx:key="">
+      <view class="category-info">
+        <image src="{{item.src}}" class="category-image"></image>
+        <view class="category-text">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 分类内容 -->
+  <scroll-view class="filterList" scroll-y="true">
+    <view class="food-list">
+      <view class="food-list-item">
+        <view class="food-item" wx:for="{{restaurants}}" wx:key="" bindtap="gotoDetail" data-index="{{item._id}}">
+          <image src="{{item.image}}" />
+          <text class="food-name">{{item.title}}</text>
+          <text class="food-describe">{{item.content}}</text>
+        </view>
+      </view>
+      <view class="loading complete">没有更多了</view>
+    </view>
+  </scroll-view>
+
+</view>

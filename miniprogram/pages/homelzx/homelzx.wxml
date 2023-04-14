@@ -4,28 +4,16 @@
   <!-- 轮播图组件 -->
   <swiper class="swiper" indicator-dots="true" autoplay="true">
     <swiper-item wx:for="{{swiper}}">
-      <image src="{{item}}" mode="widthFix"/>
+      <image src="{{item}}" mode="aspectfill"/>
     </swiper-item>
   </swiper>
 
   <!-- 菜单栏 -->
   <view class="menu">
-    <view class="menu-item" bindtap="onNavigateToType">
+    <view class="menu-item" bindtap="onNavigateToAll">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/fenlei.png"></image>
       <text class="menu-text">全部</text>
     </view>
-    <!-- <view class="menu-item" bindtap="onNavigateToDrink">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/kafei.png"></image>
-      <text class="menu-text">饮品</text>
-    </view>
-    <view class="menu-item" bindtap="onNavigateToChineseFood">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/kuaizi-.png"></image>
-      <text class="menu-text">中餐</text>
-    </view>
-    <view class="menu-item" bindtap="onNavigateToWesternFood">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/canpinhui-xican.png"></image>
-      <text class="menu-text">西餐</text>
-    </view> -->
     <view class="menu-item" bindtap="onNavigateToRestaurant">
       <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/navicon-ctgl.png"></image>
       <text class="menu-text">餐厅</text>
@@ -44,19 +32,25 @@
     </view>
   </view>
 
-  <!-- 美食分享内容 -->
-  <view class="food-list">
-    <view class="food-list-title">今日分享
+  <scroll-view class="food-list">
+    <view class="food-list-title">-----今日分享-----
     </view>
     <view class="food-list-item">
-      <view class="food-item" wx:for="{{articles}}" wx:key="_id" bindtap="gotoDetail" data-index="{{item._id}}">
-        <image src="{{item.images[0]}}"/>
+      <view class="food-item" wx:for="{{articles}}" wx:key="_id" bindtap="gotoDetail" data-index="{{item._id}}" style="width: 356rpx; height: 368rpx; display: flex; box-sizing: border-box">
+        <image style="width: 354rpx; height: 272rpx; display: block; box-sizing: border-box" src="{{item.images[0]}}"/>
         <text class="food-name">{{item.title}}</text>
-        <text class="food-describe">{{item.content}}</text>
+        <!-- <text class="food-describe">{{item.content}}</text> -->
+        <view class="user-like-container" style="width: 100%">
+          <view class="user-info" style="width: 358rpx; height: 50rpx; display: flex; box-sizing: border-box; padding-top: 5rpx">
+            <image style="width: 50rpx; height: 50rpx; display: block; box-sizing: border-box; position: relative; left: 10rpx; top: -10rpx; border-radius: 50%" src="{{item.avatarUrl}}" class="user-avatar"/>
+              <text class="user-nickname" style="margin-left: 5rpx; width: 178rpx; height: 50rpx; display: block; box-sizing: border-box">{{item.nickName}}</text>            
+          </view>
+          <view class="likes" style="width: 584rpx; height: 50rpx; display: block; box-sizing: border-box; text-align: right; padding-right: 10rpx">❤️{{item.likes}}</view>
+        </view>
       </view>
     </view>
     <view class="loading complete">没有更多了</view>
     <!-- 更多美食分享 -->
-  </view>
+  </scroll-view>
 
 </view>

@@ -6,24 +6,25 @@ Page({
    */
   data: {
     article: {},
-    comments: []
+    comments: [],
+    inputValue: null,
   },
 
   // 获取文章
-  getArticle: function(articleId) {
+  getArticle: function (articleId) {
     wx.cloud.callFunction({
-      // 云函数名称
-      name: 'getArticleById',
-      data: {
-        id: articleId
-      }
-    })
-    .then(res => {
-      console.log(res.result.data)
-      this.setData({
-        article: res.result.data
+        // 云函数名称
+        name: 'getArticleById',
+        data: {
+          id: articleId
+        }
       })
-    })
+      .then(res => {
+        console.log(res.result.data)
+        this.setData({
+          article: res.result.data
+        })
+      })
   },
 
   //获取评论
@@ -43,6 +44,20 @@ Page({
       success: res => {
         // res.data 包含该记录的数据
         console.log(res)
+        // 格式化日期
+        res.result.data.forEach(function (item, index, array) {
+          const d = new Date(item.gmtCreate)
+          item.gmtCreate = d.toLocaleString('zh-CN', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+          })
+          console.log(item)
+        })
         this.setData({
           comments: res.result.data
         })
@@ -57,12 +72,14 @@ Page({
   },
 
   //评论
-  addComment: function () {
+  addComment: function (e) {
+    // console.log(e)
+    const articleId = this.data.article._id
     wx.cloud.callFunction({
       name: 'addComment',
       data: {
-        article_id: "fc8e6465642a64080728bb49201a102f",
-        comment: "评论3",
+        article_id: articleId,
+        comment: e.detail.value,
         _openid: "event._openid",
         avatarUrl: "event.avatarUrl",
         nickName: "event.nickName",
@@ -71,6 +88,9 @@ Page({
       success: res => {
         // res.data 包含该记录的数据
         console.log(res)
+        this.setData({
+          inputValue: ''  // 评论后清空评论输入框
+        })
       },
       fail: err => {
         console.error('[云函数]调用失败', err)
