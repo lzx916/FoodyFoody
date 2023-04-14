@@ -6,9 +6,9 @@ Page({
    */
   data: {
     swiper: [
-      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/4.jpg",
-      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/5.jpg",
-      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/6.jpg"
+      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/师大正门.jpg",
+      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/师大校徽.jpg",
+      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/华东师范大学思群堂.jpg"
     ],
     articles: [],
   },
@@ -71,7 +71,7 @@ Page({
 
   // 获取首页数据
   getArticles: async function(pageSize=5, pageIndex=1) {
-    await wx.cloud.callFunction({
+    const res = await wx.cloud.callFunction({
       name: 'getDataPageByFilter',
       data: {
         dbName: 'article',
@@ -81,20 +81,25 @@ Page({
         },
         orderBy: 'gmt_create'
       },
-      success: res => {
-        // res.data 包含该记录的数据
-        let oldArticles = this.data.articles  // 翻页数据拼接
-        let newArticles = oldArticles.concat(res.result.data)
-        //console.log(newArticles)
-        this.setData({ articles: newArticles })
-        console.log(this.data.articles)
-      },
-      fail: err => {
-        console.error('[云函数]调用失败', err)
-      },
-      complete: res => {
-      }
+      // success: res => {  // success 是异步的
+      //   // res.data 包含该记录的数据
+      //   let oldArticles = this.data.articles  // 翻页数据拼接
+      //   let newArticles = oldArticles.concat(res.result.data)
+      //   //console.log(newArticles)
+      //   this.setData({ articles: newArticles })
+      //   console.log(this.data.articles)
+      // },
+      // fail: err => {
+      //   console.error('[云函数]调用失败', err)
+      // },
+      // complete: res => {
+      // }
     })
+    // res.data 包含该记录的数据
+    let oldArticles = this.data.articles  // 翻页数据拼接
+    let newArticles = oldArticles.concat(res.result.data)
+    this.setData({ articles: newArticles })
+    // console.log(this.data.articles)
   },
 
   /**

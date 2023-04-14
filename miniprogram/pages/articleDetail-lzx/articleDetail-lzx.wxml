@@ -17,7 +17,7 @@
     <!-- 总共评论数 -->
     <view class="total">共{{comments.length}}条评论</view>
     <!-- 评论框 -->
-    <input confirm-type="send" class="container-inp" value="{{value}}" placeholder="说点什么，让ta也认识看笔记的你" placeholder-class="container-place" bindconfirm="bindconfirm"></input>
+    <input confirm-type="send" class="container-inp" placeholder="说点什么，让ta也认识看笔记的你" placeholder-class="container-place" bindconfirm="addComment" value="{{inputValue}}"></input>
     <!-- 评论列表 -->
     <view class="comment" wx:for="{{comments}}" wx:key="{{item.id}}">
       <image class="comment-user-avatar" src="{{item.avatarUrl}}"></image>

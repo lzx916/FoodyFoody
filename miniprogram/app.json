@@ -1,14 +1,14 @@
 {
   "pages": [
     "pages/homelzx/homelzx",
+    "pages/restaurant/restaurant",
+    "pages/all/all",
+    "pages/type/type",
     "pages/more/more",
     "pages/shop/shop",
-    "pages/all/all",
     "pages/find/find",
-    "pages/type/type",
     "pages/cafe/cafe",
     "pages/articleDetail-lzx/articleDetail-lzx",
-    "pages/restaurant/restaurant",
     "pages/westernFood/westernFood",
     "pages/chineseFood/chineseFood",
     "pages/drink/drink",
