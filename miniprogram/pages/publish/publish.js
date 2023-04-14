@@ -12,6 +12,35 @@ Page({
   data: {
     myData: null
   },
+
+  addUser: function () {
+    wx.getUserProfile({
+      desc: '用于完善会员资料',  // 授权说明
+      success: (res) => {
+        const userInfo = res.userInfo  // 用户信息
+        wx.cloud.callFunction({
+          name: 'saveUser',
+          data: {
+            _openid: wx.getStorageSync("openid"),
+            avatarUrl: userInfo.avatarUrl,
+            nickName: userInfo.nickName,
+            gender: userInfo.gender,
+            birthDay: userInfo.birthDay,
+            school: "ECNU",
+            role: 0,
+          },
+          success: res => {
+            console.log(res)
+          },
+          fail: err => {
+            console.error('[云函数]调用失败', err)
+          },
+          complete: res => { }
+        })
+      }
+    })
+
+  },
   //查看评论
   getComments: function () {
     wx.cloud.callFunction({

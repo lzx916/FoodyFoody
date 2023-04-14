@@ -7,3 +7,8 @@
   <text>{{item.comment}}</text>----<text>{{item.gmtCreate}}</text>
 </view>
 
+----------
+<button bindtap="addUser">向user表添加记录</button>
+
+
+
