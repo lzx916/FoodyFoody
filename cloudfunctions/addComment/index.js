@@ -36,7 +36,7 @@ exports.main = async (event, context) => {
       })
       // let task = await db.collection('article').doc(event.id).update({
       //   data: {
-      //     comment_count: _.inc(1)
+      //     commentCnt: _.inc(1)
       //   }
       // })
       return { code: 200, msg: '评论成功', data: result }

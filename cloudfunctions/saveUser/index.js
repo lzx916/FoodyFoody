@@ -10,16 +10,15 @@ exports.main = async(event, context) => {
   try {
     return await db.collection('user').add({
       data: {
-        _id: event.openid,
-        loginTime: event.loginTime,
-        lastLoginTime: event.lastLoginTime,
+        _id: event._openid,
+        _openid:event._openid,
         avatarUrl: event.avatarUrl,
-        city: event.city,
-        country: event.country,
-        gender: event.gender,
-        language: event.language,
         nickName: event.nickName,
-        province: event.province
+        gender: event.gender,
+        birthDay:event.birthDay,
+        school: event.school,
+        role: event.role,
+        gmtCreate: new Date()
       }
     }).then(res => {
       return res;
