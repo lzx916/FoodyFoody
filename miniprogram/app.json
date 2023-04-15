@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/homelzx/homelzx",
+    "pages/category/category",
     "pages/restaurant/restaurant",
     "pages/all/all",
     "pages/type/type",

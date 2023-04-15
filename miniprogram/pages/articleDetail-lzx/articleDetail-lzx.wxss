@@ -1,4 +1,7 @@
 /* pages/articleDetail-lzx/articleDetail-lzx.wxss */
+page {
+  background-color: white;
+}
 .detail-container {
   padding: 20rpx;
 }
