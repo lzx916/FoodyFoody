@@ -11,23 +11,23 @@
   <!-- 菜单栏 -->
   <view class="menu">
     <view class="menu-item" bindtap="onNavigateToAll">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/fenlei.png"></image>
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/首页分类图标/fenlei-.png"></image>
       <text class="menu-text">全部</text>
     </view>
     <view class="menu-item" bindtap="onNavigateToCategoryPage" data-cat="餐厅">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/navicon-ctgl.png"></image>
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/首页分类图标/tuancancanting.png"></image>
       <text class="menu-text">餐厅</text>
     </view>
     <view class="menu-item" bindtap="onNavigateToCategoryPage" data-cat="咖啡店">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/jiudiancanting-.png"></image>
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/首页分类图标/kafei.png"></image>
       <text class="menu-text">咖啡厅</text>
     </view>
     <view class="menu-item" bindtap="onNavigateToCategoryPage" data-cat="便利店">
-      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/shop.png"></image>
+      <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/首页分类图标/bianlidian.png"></image>
       <text class="menu-text">便利店</text>
     </view>
     <view class="menu-item" bindtap="onNavigateToCategoryPage" data-cat="水果铺">
-    <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/icons/more.png"></image>
+    <image class="menu-icon" src="cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/首页分类图标/gengduo.png"></image>
     <text class="menu-text">更多</text>
     </view>
   </view>
