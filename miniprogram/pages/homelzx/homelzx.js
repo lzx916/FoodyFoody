@@ -7,7 +7,7 @@ Page({
   data: {
     swiper: [
       "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/师大正门.jpg",
-      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/师大校徽.jpg",
+      "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/祥麟书苑1.jpg",
       "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/swiper/华东师范大学思群堂.jpg"
     ],
     articles: [],
@@ -27,45 +27,52 @@ Page({
     })
   },
 
-  onNavigateToDrink() {
-    wx.navigateTo({
-      url: '/pages/drink/drink',
-    })
-  },
+  // onNavigateToDrink() {
+  //   wx.navigateTo({
+  //     url: '/pages/drink/drink',
+  //   })
+  // },
 
-  onNavigateToChineseFood() {
-    wx.navigateTo({
-      url: '/pages/chineseFood/chineseFood',
-    })
-  },
+  // onNavigateToChineseFood() {
+  //   wx.navigateTo({
+  //     url: '/pages/chineseFood/chineseFood',
+  //   })
+  // },
 
-  onNavigateToWesternFood() {
-    wx.navigateTo({
-      url: '/pages/westernFood/westernFood',
-    })
-  },
+  // onNavigateToWesternFood() {
+  //   wx.navigateTo({
+  //     url: '/pages/westernFood/westernFood',
+  //   })
+  // },
 
-  onNavigateToRestaurant() {
-    wx.navigateTo({
-      url: '/pages/restaurant/restaurant',
-    })
-  },
+  // onNavigateToRestaurant() {
+  //   wx.navigateTo({
+  //     url: '/pages/restaurant/restaurant',
+  //   })
+  // },
 
-  onNavigateToShop() {
-    wx.navigateTo({
-      url: '/pages/shop/shop',
-    })
-  },
+  // onNavigateToShop() {
+  //   wx.navigateTo({
+  //     url: '/pages/shop/shop',
+  //   })
+  // },
 
-  onNavigateToMore() {
-    wx.navigateTo({
-      url: '/pages/more/more',
-    })
-  },
+  // onNavigateToMore() {
+  //   wx.navigateTo({
+  //     url: '/pages/more/more',
+  //   })
+  // },
 
-  onNavigateToCafe() {
+  // onNavigateToCafe() {
+  //   wx.navigateTo({
+  //     url: '/pages/cafe/cafe',
+  //   })
+  // },
+
+  onNavigateToCategoryPage(e) {
+    // console.log(e.currentTarget.dataset.cat)
     wx.navigateTo({
-      url: '/pages/cafe/cafe',
+      url: `/pages/category/category?cat=${e.currentTarget.dataset.cat}`,
     })
   },
 
@@ -109,10 +116,10 @@ Page({
     await this.getArticles()
     // 获取每个article的作者信息，添加新字段userInfo
     
-    console.log(this.data.articles)
-    this.data.articles.forEach(function(i) {
-      console.log(i.openid)
-    })
+    // console.log(this.data.articles)
+    // this.data.articles.forEach(function(i) {
+    //   console.log(i.openid)
+    // })
     // var openid = wx.getStorageSync("openid");
     // if (!openid || openid == '') {
     //   this.getUserOpenId();

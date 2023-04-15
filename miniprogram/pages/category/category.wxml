@@ -1,0 +1,27 @@
+<!--pages/category/category.wxml-->
+<view class="container">
+
+  <view class="categoryList">
+    <block wx:for="{{categoryList}}" wx:key="">
+      <view class="category-info">
+        <image src="{{item.src}}" class="category-image" bindtap="updatePlaces" data-cate="{{item.name}}"></image>
+        <view class="category-text">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 动画测试 -->
+  <!-- <view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view> -->
+
+  <!-- 分类内容 -->
+  <view class="image-container" scroll-y="true">
+    <block wx:for="{{places}}" wx:key="{{index}}">
+      <view class="image-wrapper" animation="{{animationItem}}">
+        <image src="{{item.pictureUrls}}" mode="widthFix" data-title="{{item.name}}" data-index="{{index}}" bindtap="imageTap"/>
+        <view class="image-title">{{item.name}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="loading complete">没有更多了</view>
+
+</view>

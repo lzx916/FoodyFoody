@@ -7,31 +7,30 @@ Page({
   data: {
     categoryList: [
       {
-        name: "丽娃中餐厅",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/_zhongcan.png"
+        name: "餐厅",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/canting.png"
       }, {
-        name: "丽娃西餐厅",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/doufunao.png"
+        name: "咖啡厅",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/kafei.png"
       }, {
-        name: "丽娃清真餐厅",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/dangao.png"
+        name: "水果铺",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/shanzhu.png"
       }, {
-        name: "河西一楼",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/xican.png"
+        name: "便利店",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/shangdian.png"
       }, {
-        name: "河西二楼",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/baozi.png"
+        name: "书屋",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/tushu.png"
       }, {
-        name: "秋林阁",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/chufangyongpin-tangguo.png"
+        name: "师大文创",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/jinianpin.png"
       }, {
-        name: "河东一楼",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/yu.png"
+        name: "运动一下",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/yundong.png"
       }, {
-        name: "河东二楼",
-        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category/mianshi.png"
+        name: "校园周边",
+        src: "cloud://cloud1-6gb3kr0dd5a291f1.636c-cloud1-6gb3kr0dd5a291f1-1317379084/category_new/zhoubian.png"
       }],
-    restaurants: [],
   },
 
   /**

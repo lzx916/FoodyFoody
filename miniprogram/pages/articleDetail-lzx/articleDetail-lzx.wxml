@@ -20,7 +20,7 @@
     <input confirm-type="send" class="container-inp" placeholder="说点什么，让ta也认识看笔记的你" placeholder-class="container-place" bindconfirm="addComment" value="{{inputValue}}"></input>
     <!-- 评论列表 -->
     <view class="comment" wx:for="{{comments}}" wx:key="{{item.id}}">
-      <image class="comment-user-avatar" src="{{item.avatarUrl}}"></image>
+      <image class="comment-user-avatar" src="{{item.avatarUrl}}" style="border-radius: 50%"></image>
       <view class="comment-right">
         <view class="comment-user-name">{{item.nickName}}</view>
         <view class="comment-content">
