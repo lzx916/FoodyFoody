@@ -11,7 +11,6 @@ exports.main = async(event, context) => {
     return await db.collection('user').add({
       data: {
         _id: event._openid,
-        _openid:event._openid,
         avatarUrl: event.avatarUrl,
         nickName: event.nickName,
         gender: event.gender,

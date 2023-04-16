@@ -58,6 +58,8 @@ Page({
           hasUserInfo: true
         })
         wx.setStorageSync("userInfo", res.userInfo)
+        console.log(wx.getStorageSync('userInfo'))
+
       }
     })
   },
@@ -67,7 +69,7 @@ Page({
       name: 'getUserOpenId',
       data: {},
       success: res => {
-        // console.log("用户的openID=" + res.result.openid)
+        console.log("user" + res.result.openid)
         wx.setStorageSync("openid", res.result.openid)
         this.setData({
           openid: openid

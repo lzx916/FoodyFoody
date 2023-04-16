@@ -75,14 +75,16 @@ Page({
   addComment: function (e) {
     // console.log(e)
     const articleId = this.data.article._id
+    const userInfo = wx.getStorageSync('userInfo')
+    const openid = wx.getStorageSync('openid')
     wx.cloud.callFunction({
       name: 'addComment',
       data: {
         article_id: articleId,
         comment: e.detail.value,
-        _openid: "event._openid",
-        avatarUrl: "event.avatarUrl",
-        nickName: "event.nickName",
+        _openid: openid,
+        avatarUrl: userInfo.avatarUrl,
+        nickName: userInfo.nickName,
         gmtCreate: new Date()
       },
       success: res => {
@@ -91,6 +93,7 @@ Page({
         this.setData({
           inputValue: ''  // 评论后清空评论输入框
         })
+        this.getComments(articleId)
       },
       fail: err => {
         console.error('[云函数]调用失败', err)
