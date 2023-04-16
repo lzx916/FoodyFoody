@@ -9,6 +9,9 @@
 
 ----------
 <button bindtap="addUser">向user表添加记录</button>
+----------
+<button bindtap="getUserInfo">获取缓存用户信息</button>
+
 
 
 
