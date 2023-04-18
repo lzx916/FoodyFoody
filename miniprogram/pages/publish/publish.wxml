@@ -12,6 +12,9 @@
 ----------
 <button bindtap="getUserInfo">获取缓存用户信息</button>
 
+----------
+<button bindtap="addArticle">发布article云函数测试</button>
+
 
 
 
