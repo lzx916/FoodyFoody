@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/test/test",
     "pages/homelzx/homelzx",
     "pages/category/category",
     "pages/restaurant/restaurant",
@@ -42,6 +43,12 @@
         "iconPath": "images/icon-lzx/meishi.png",
         "selectedIconPath": "images/icon-lzx/meishi-selected.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "iconPath": "images/poster.png",
+        "selectedIconPath": "images/poster.png",
+        "text": "测试"
       },
       {
         "pagePath": "pages/publish/publish",
