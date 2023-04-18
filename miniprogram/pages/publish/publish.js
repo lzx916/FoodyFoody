@@ -13,6 +13,31 @@ Page({
     myData: null
   },
 
+  addArticle: function () {
+    const _openid = wx.getStorageSync("openid")
+    const userInfo = wx.getStorageSync("userInfo")
+    wx.cloud.callFunction({
+      name: 'addArticle',
+      data: {
+        _openid: _openid,
+        avatarUrl: userInfo.avatarUrl,
+        nickName: userInfo.nickName,
+        title: "artcicle",
+        content: "event.content",
+        images: ["图片1", "图片2"],
+        addres: "event.addres",
+        tags: ["标签1", "标签2"]
+      },
+      success: res => {
+        console.log(res)
+      },
+      fail: err => {
+        console.error('[云函数]调用失败', err)
+      },
+      complete: res => { }
+    })
+  },
+
   getUserInfo: function () {
     const userInfo = wx.getStorageSync('userInfo')
     console.log(userInfo)
