@@ -1,0 +1,16 @@
+<!--pages/test/test.wxml-->
+<!--pages/publish/publish.wxml-->
+<button bindtap="addComment">测试评论</button>
+
+----------
+<button bindtap="getComments">测试查看图文评论</button>
+<view wx:for="{{myData}}" wx:key="id">
+  <text>{{item.comment}}</text>----<text>{{item.gmtCreate}}</text>
+</view>
+
+----------
+<button bindtap="addUser">向user表添加记录</button>
+
+
+
+
