@@ -13,6 +13,11 @@ Page({
     myData: null
   },
 
+  getUserInfo: function () {
+    const userInfo = wx.getStorageSync('userInfo')
+    console.log(userInfo)
+  },
+
   addUser: function () {
     wx.getUserProfile({
       desc: '用于完善会员资料',  // 授权说明
