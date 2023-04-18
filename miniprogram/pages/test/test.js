@@ -1,4 +1,4 @@
-// pages/test/test.js
+// pages/publish/publish.js
 const util = require("../../utils/util.js")
 const app = getApp()
 const db = wx.cloud.database({
@@ -11,6 +11,29 @@ Page({
    */
   data: {
     myData: null
+  },
+
+  addArticle: function () {
+    const userInfo = wx.getStorageSync("userInfo")
+    wx.cloud.callFunction({
+      name: 'addArticle',
+      data: {
+        avatarUrl: userInfo.avatarUrl,
+        nickName: userInfo.nickName,
+        title: "artcicle",
+        content: "event.content",
+        images: ["图片1", "图片2"],
+        addres: "event.addres",
+        tags: ["标签1", "标签2"]
+      },
+      success: res => {
+        console.log(res)
+      },
+      fail: err => {
+        console.error('[云函数]调用失败', err)
+      },
+      complete: res => { }
+    })
   },
 
   getUserInfo: function () {

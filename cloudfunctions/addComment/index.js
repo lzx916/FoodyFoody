@@ -34,11 +34,11 @@ exports.main = async (event, context) => {
       }).then(res => {
         return res;
       })
-      // let task = await db.collection('article').doc(event.id).update({
-      //   data: {
-      //     commentCnt: _.inc(1)
-      //   }
-      // })
+      let task = await db.collection('article').doc(event.article_id).update({
+        data: {
+          commentCnt: _.inc(1)
+        }
+      })
       return { code: 200, msg: '评论成功', data: result }
     }
   } catch (err) {
