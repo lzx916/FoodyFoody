@@ -1,20 +1,31 @@
 <!--pages/publish/publish.wxml-->
-<button bindtap="addComment">测试评论</button>
-
-----------
-<button bindtap="getComments">测试查看图文评论</button>
-<view wx:for="{{myData}}" wx:key="id">
-  <text>{{item.comment}}</text>----<text>{{item.gmtCreate}}</text>
+<view class="container">
+  <form bindsubmit="addArticle">
+    <view class="form-item">
+      <input class="input title" type="text" name="title" placeholder="或许你想填写个标题吗" required="true" value="{{title}}" />
+    </view>
+    <view class="form-item">
+      <textarea class="input" name="content" placeholder="分享此刻的美味吧~" required="true" value="{{content}}"></textarea>
+    </view>
+    <view class="form-item">
+      <view class="image-upload">
+        <view class="image-preview-group">
+          <block wx:for="{{imageSrc}}" wx:key="{{item}}">
+            <image class="image-preview" src="{{item}}" mode="widthFix" bindtap="delImage" data-index="{{index}}"></image>
+          </block>
+          <view class="image-add" wx:if="{{imageCount < 9}}" bindtap="chooseImage">+</view>
+        </view>
+      </view>
+    </view>
+    <view class="form-item">
+      <scroll-view scroll-x="true" class="tags-group" style="width: 750rpx; height: 78rpx; display: block; box-sizing: border-box">
+        <view class="tag-container" style="min-width: 100vw; width: 750rpx; height: 78rpx; display: flex; box-sizing: border-box">
+          <view class="tag" wx:for="{{tags}}" style="width: 132rpx; height: 75rpx; display: block; box-sizing: border-box">#{{item}}</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="submit-btn-container">
+      <button class="submit-btn" form-type="submit">分享笔记</button>
+    </view>
+  </form>
 </view>
-
-----------
-<button bindtap="addUser">向user表添加记录</button>
-----------
-<button bindtap="getUserInfo">获取缓存用户信息</button>
-
-----------
-<button bindtap="addArticle">发布article云函数测试</button>
-
-
-
-

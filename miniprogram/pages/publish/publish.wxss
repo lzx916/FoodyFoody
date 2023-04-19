@@ -1,1 +1,107 @@
 /* pages/publish/publish.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.title {
+  border-bottom: 1rpx solid #ccc;
+  font-size: 36rpx;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.tags-group {
+  height: 50px;
+  /* 设置高度 */
+}
+
+.tag-container {
+  display: flex;
+  /* 使用 flex 布局 */
+  white-space: nowrap;
+  /* 不换行 */
+  height: 50px;
+  /* 设置高度 */
+}
+
+.tag {
+  margin-left: 20rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 45rpx;
+  color: #888;
+  padding: 20rpx;
+  font-size: 26rpx;
+}
+
+.label {
+  flex-basis: 100rpx;
+  font-size: 24rpx;
+}
+
+.input {
+  flex-grow: 1;
+  font-size: 32rpx;
+  padding: 10rpx;
+  padding-left: 25rpx;
+}
+
+.image-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image-preview-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: right;
+}
+
+.image-preview {
+  width: 230rpx;
+  height: 230rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border-radius: 15rpx;
+}
+
+.image-add {
+  position: relative;
+  left: 20rpx;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  border: 1rpx dashed #ccc;
+  border-radius: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60rpx;
+  color: #ccc;
+}
+
+.submit-btn-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.submit-btn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 45rpx;
+  background-color: #FFC125;
+  color: #fff;
+  font-size: 32rpx;
+}
