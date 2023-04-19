@@ -1,7 +1,7 @@
 <!--pages/articleDetail-lzx/articleDetail-lzx.wxml-->
 <view class="detail-container">
   <!-- 轮播图 -->
-  <swiper class="swiper" indicator-dots="true" autoplay="true">
+  <swiper class="swiper" indicator-dots="true" autoplay="false">
     <swiper-item wx:for="{{article.images}}">
       <image class="swiper-image" src="{{item}}"></image>
     </swiper-item>
@@ -16,8 +16,6 @@
     <!-- <view class="comment-title">用户评论</view> -->
     <!-- 总共评论数 -->
     <view class="total">共{{comments.length}}条评论</view>
-    <!-- 评论框 -->
-    <input confirm-type="send" class="container-inp" placeholder="说点什么，让ta也认识看笔记的你" placeholder-class="container-place" bindconfirm="addComment" value="{{inputValue}}"></input>
     <!-- 评论列表 -->
     <view class="comment" wx:for="{{comments}}" wx:key="{{item.id}}">
       <image class="comment-user-avatar" src="{{item.avatarUrl}}" style="border-radius: 50%"></image>
@@ -28,6 +26,14 @@
           <text class="comment-content-time">{{item.gmtCreate}}</text>
         </view>
       </view>
+    </view>
+    <!-- The End -->
+    <view class="end">到底啦👻</view>
+    <view class="comment-box">
+      <input class="comment-input" placeholder="✍️说点什么吧..." bindinput="onInput" value="{{inputValue}}"/>
+      <view class="comment-btn" bindtap="addComment">发布</view>
+      <view class="comment-count">{{comments.length}}💬</view>
+      <view class="like-count">{{article.likes}}❤️</view>
     </view>
   </view>
 </view>
