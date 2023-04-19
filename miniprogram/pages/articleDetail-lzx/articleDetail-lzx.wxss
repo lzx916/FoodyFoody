@@ -47,15 +47,26 @@ page {
   margin-left: 1rpx;
 }
 
-.container-inp {
+/* .bottom-container {
+  position: fixed;
+  bottom: 0px;
+  width: 750rpx;
+  background-color: white;
+  height: 60rpx;
+  display: flex;
+  flex-direction: row;
+} */
+
+/* .container-inp {
+  position: fixed;
+  bottom: 5rpx;
   width: 661rpx;
   height: 32rpx;
-  background-color: #F2F2F2;
-  border-radius: 8rpx;
-  padding: 17rpx 0rpx 15rpx 25rpx;
-  margin-top: 24rpx;
-  margin-bottom: 47rpx;
-}
+  /* background-color: #F2F2F2; */
+  /* border-radius: 45rpx;
+  padding: 17rpx 0rpx 15rpx 25rpx; */
+  /* margin-top: 24rpx; */
+/* } */
 
 .container-place {
   font-size: 24rpx;
@@ -106,4 +117,52 @@ page {
   font-size: 24rpx;
   color: #CCCCCC;
   margin-left: 30rpx;
+}
+
+.end {
+  font-size: 32rpx;
+  color: #ccc;
+  text-align: center;
+  height: 150rpx;
+}
+
+.comment-box {
+  left: 0px;
+  /* border: 1px solid olive; */
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  padding: 10rpx;
+  background-color: #fff;
+  /* flex: 1; */
+}
+
+.comment-input {
+  flex: 1;
+  height: 60rpx;
+  width: 450rpx;
+  padding: 10rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 45rpx;
+  font-size: 28rpx;
+  margin-left: 5rpx;
+}
+
+.comment-btn {
+  width: 100rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #FFC125;
+  color: #fff;
+  border-radius: 45rpx;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.comment-count, .like-count {
+  margin-left: 20rpx;
+  font-size: 32rpx;
+  color: #999;
 }

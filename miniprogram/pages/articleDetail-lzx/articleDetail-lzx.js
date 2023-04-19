@@ -71,6 +71,13 @@ Page({
     })
   },
 
+  // 获取评论内容
+  onInput: function(e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
   //评论
   addComment: function (e) {
     // console.log(e)
@@ -81,7 +88,7 @@ Page({
       name: 'addComment',
       data: {
         article_id: articleId,
-        comment: e.detail.value,
+        comment: this.data.inputValue,
         _openid: openid,
         avatarUrl: userInfo.avatarUrl,
         nickName: userInfo.nickName,
