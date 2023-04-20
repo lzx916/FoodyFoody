@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/homelzx/homelzx",
+    "pages/articleDetail-lzx/articleDetail-lzx",
     "pages/publish/publish",
     "pages/friend/friend",
-    "pages/homelzx/homelzx",
     "pages/test/test",
     "pages/category/category",
     "pages/all/all",
-    "pages/articleDetail-lzx/articleDetail-lzx",
     "pages/home/home",
     "pages/me/me",
     "pages/updateLogs/updateLogs",
