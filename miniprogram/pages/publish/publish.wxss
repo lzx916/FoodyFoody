@@ -41,6 +41,16 @@
   font-size: 26rpx;
 }
 
+.tagActive {
+  margin-left: 20rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 45rpx;
+  color: #888;
+  padding: 20rpx;
+  font-size: 26rpx;
+  background-color: #FFC125;
+}
+
 .label {
   flex-basis: 100rpx;
   font-size: 24rpx;
@@ -97,7 +107,7 @@
 }
 
 .submit-btn {
-  width: 100%;
+  width: 98%;
   height: 100%;
   border: none;
   border-radius: 45rpx;
