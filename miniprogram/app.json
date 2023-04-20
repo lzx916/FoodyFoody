@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/publish/publish",
     "pages/homelzx/homelzx",
     "pages/articleDetail-lzx/articleDetail-lzx",
-    "pages/publish/publish",
     "pages/friend/friend",
     "pages/test/test",
     "pages/category/category",

@@ -10,6 +10,20 @@ Page({
     imageCount: 0,
     title: '',
     content: '',
+    isTagActive: false,
+  },
+
+  // 获取点击的标签
+  onTagTap: function(e) {
+    const tag = e.currentTarget.dataset.index
+    // console.log(tag)
+    const selectedTags = this.data.selectedTags
+    selectedTags.push(tag)
+    this.setData({
+      selectedTags: selectedTags,
+      isTagActive: !this.data.isTagActive
+    })
+    // console.log(this.data.selectedTags)
   },
 
   addArticle: function (e) {
@@ -25,18 +39,21 @@ Page({
         content: formData.content,
         images: this.data.imageSrc,
         addres: "event.addres",
-        tags: ["标签1", "标签2"]
+        tags: this.data.selectedTags
       },
       success: res => {
         // console.log(res)
-        wx.showToast({
-          title: '发布成功🤞',
-          success: function () {
+          wx.showToast({
+            icon: 'success',
+            title: '发布成功🤞',
+          });
+          setTimeout(() => {
+            wx.hideToast()
+            //关闭提示后跳转
             wx.switchTab({
-              url: '../homelzx/homelzx'
+              url: '../homelzx/homelzx',
             })
-          }
-        })
+          }, 1500);
         this.setData({
           title: '',
           content: '',

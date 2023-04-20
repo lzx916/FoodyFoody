@@ -20,7 +20,7 @@
     <view class="form-item">
       <scroll-view scroll-x="true" class="tags-group" style="width: 750rpx; height: 78rpx; display: block; box-sizing: border-box">
         <view class="tag-container" style="min-width: 100vw; width: 750rpx; height: 78rpx; display: flex; box-sizing: border-box">
-          <view class="tag" wx:for="{{tags}}" style="width: 132rpx; height: 75rpx; display: block; box-sizing: border-box">#{{item}}</view>
+          <view class="tag" wx:for="{{tags}}" style="width: 132rpx; height: 75rpx; display: block; box-sizing: border-box;" bindtap="onTagTap" data-tag="{{item}}">#{{item}}</view>
         </view>
       </scroll-view>
     </view>
