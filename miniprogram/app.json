@@ -1,28 +1,16 @@
 {
   "pages": [
-    "pages/test/test",
-    "pages/homelzx/homelzx",
-    "pages/category/category",
-    "pages/restaurant/restaurant",
-    "pages/all/all",
-    "pages/type/type",
-    "pages/more/more",
-    "pages/shop/shop",
-    "pages/find/find",
-    "pages/cafe/cafe",
-    "pages/articleDetail-lzx/articleDetail-lzx",
-    "pages/westernFood/westernFood",
-    "pages/chineseFood/chineseFood",
-    "pages/drink/drink",
     "pages/publish/publish",
+    "pages/friend/friend",
+    "pages/homelzx/homelzx",
+    "pages/test/test",
+    "pages/category/category",
+    "pages/all/all",
+    "pages/articleDetail-lzx/articleDetail-lzx",
     "pages/home/home",
     "pages/me/me",
-    "pages/special/special",
-    "pages/articleDetail/articleDetail",
-    "pages/comment/comment",
     "pages/updateLogs/updateLogs",
     "pages/admin/admin",
-    "pages/userList/userList",
     "pages/messageSelectList/messageSelectList"
   ],
   "window": {
@@ -57,7 +45,7 @@
         "text": "发布"
       },
       {
-        "pagePath": "pages/find/find",
+        "pagePath": "pages/friend/friend",
         "iconPath": "images/icon-lzx/find.png",
         "selectedIconPath": "images/icon-lzx/find-selected.png",
         "text": "饭搭"

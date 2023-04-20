@@ -1,4 +1,4 @@
-// pages/more/more.js
+// pages/friend/friend.js
 Page({
 
   /**
