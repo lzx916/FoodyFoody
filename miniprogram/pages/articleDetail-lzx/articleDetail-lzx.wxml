@@ -11,6 +11,10 @@
     <view class="title">{{article.title}}</view>
     <view class="description">{{article.content}}</view>
   </view>
+  <!-- 标签列表 -->
+  <view class="tag-container">
+    <view class="tag" wx:for="{{article.tags}}" wx:key="{{item}}">🏷️#{{item}}</view>
+  </view>
   <!-- 用户评论 -->
   <view class="comment-container">
     <!-- <view class="comment-title">用户评论</view> -->
