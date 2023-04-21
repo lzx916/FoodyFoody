@@ -86,34 +86,21 @@ Page({
         pageSize: pageSize,
         filter: {
         },
-        orderBy: 'gmt_create'
-      },
-      // success: res => {  // success 是异步的
-      //   // res.data 包含该记录的数据
-      //   let oldArticles = this.data.articles  // 翻页数据拼接
-      //   let newArticles = oldArticles.concat(res.result.data)
-      //   //console.log(newArticles)
-      //   this.setData({ articles: newArticles })
-      //   console.log(this.data.articles)
-      // },
-      // fail: err => {
-      //   console.error('[云函数]调用失败', err)
-      // },
-      // complete: res => {
-      // }
+        orderBy: 'gmtCreate'
+      }
     })
     // res.data 包含该记录的数据
     let oldArticles = this.data.articles  // 翻页数据拼接
     let newArticles = oldArticles.concat(res.result.data)
     this.setData({ articles: newArticles })
-    // console.log(this.data.articles)
+    console.log(this.data.articles)
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: async function(options) {
-    await this.getArticles()
+    // await this.getArticles()
     // 获取每个article的作者信息，添加新字段userInfo
     
     // console.log(this.data.articles)
@@ -155,6 +142,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
+    this.getArticles()
   },
 
   /**

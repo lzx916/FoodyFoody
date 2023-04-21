@@ -1,4 +1,4 @@
-<button bindtap="addComment">测试评论</button>
+<!-- <button bindtap="addComment">测试评论</button>
 
 ----------
 <button bindtap="getComments">测试查看图文评论</button>
@@ -13,7 +13,15 @@
 
 ----------
 <button bindtap="addArticle">发布article云函数测试</button>
+----------
+<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view>test content</view>
+</mp-dialog>
+ -->
 
-
-
-
+<mp-article>
+  <h1>这是标题</h1>
+  <p>这是一段正文。</p>
+  <p>这是另一段正文。</p>
+  <p>这是最后一段正文。</p>
+</mp-article>
