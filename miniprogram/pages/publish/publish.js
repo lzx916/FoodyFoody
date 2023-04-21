@@ -1,4 +1,9 @@
 // pages/publish/publish.js
+const cloud = wx.cloud;
+cloud.init({
+  env: 'cloud1-6gb3kr0dd5a291f1'
+});
+
 Page({
   /**
    * 页面的初始数据
@@ -56,7 +61,7 @@ Page({
     // console.log(index)
     let newImageSrcs = this.data.imageSrc
     newImageSrcs.splice(index, 1)
-    let newImageCount = this.data.imageCount-1
+    let newImageCount = this.data.imageCount - 1
     this.setData({
       imageSrc: newImageSrcs,
       imageCount: newImageCount
@@ -64,15 +69,34 @@ Page({
   },
 
   chooseImage() {
-    wx.chooseImage({
+    // wx.chooseImage({
+    //   count: 1,
+    //   success: res => {
+    //     let newImageSrcs = this.data.imageSrc
+    //     newImageSrcs.push(res.tempFilePaths[0])
+    //     let newImageCount = this.data.imageCount + 1
+    //     this.setData({
+    //       imageSrc: newImageSrcs,
+    //       imageCount: newImageCount
+    //     });
+    //   }
+    // });
+    wx.chooseMedia({
       count: 1,
+      mediaType: ['image', 'video'],
       success: res => {
-        let newImageSrcs = this.data.imageSrc
-        newImageSrcs.push(res.tempFilePaths[0])
-        let newImageCount = this.data.imageCount + 1
-        this.setData({
-          imageSrc: newImageSrcs,
-          imageCount: newImageCount
+        const tempFilePath = res.tempFiles[0].tempFilePath;
+        // 上传文件到云存储
+        cloud.uploadFile({
+          cloudPath: 'media/' + new Date().getTime() + '.' + tempFilePath.split('.').pop(),
+          filePath: tempFilePath,
+          success: res => {
+            console.log('上传成功', res.fileID);
+            let images = this.data.imageSrc
+            images.push(res.fileID)
+            this.setData({ imageSrc: images })
+          },
+          fail: console.error
         });
       }
     });

@@ -10,7 +10,37 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myData: null
+    myData: null,
+    buttons: [{text: '取消'}, {text: '确认'}],
+    article: {
+      title: '这里是文章标题',
+      author: '作者名字',
+      time: '2018-03-01',
+      img: 'http://img.hb.aicdn.com/c2208ca886da755dd00d495bbd6d905df8f94e7b3c2e1-q7V3dF_fw658',
+      content: [
+        {
+          type: 'p',
+          text: '这里是正文内容'
+        },
+        {
+          type: 'p',
+          text: '这里是正文内容'
+        },
+        {
+          type: 'h2',
+          text: '这里是副标题'
+        },
+        {
+          type: 'p',
+          text: '这里是正文内容'
+        },
+        {
+          type: 'img',
+          src: 'http://img.hb.aicdn.com/4b4c46d9b9eb55d6878bfcf623ab0c12c1d3f3c8bd5e5-DGNMKg_fw658',
+          text: '这里是图片的描述文字'
+        }
+      ]
+    }
   },
 
   addArticle: function () {
