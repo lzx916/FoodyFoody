@@ -8,10 +8,9 @@ const db = cloud.database()
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  let id = event.id    // 获取函数参数
-  // return await db.collection('article').doc('aac8593d642a56960009394f4474b81f').get()
-  // console.log(id)
-  return await db.collection('article').doc(id).get()
+  const placeId = event.placeId  // 获取 函数参数
+  console.log(placeId)
+  return await db.collection('place').doc(placeId).get()
 
   // return {
   //   event,

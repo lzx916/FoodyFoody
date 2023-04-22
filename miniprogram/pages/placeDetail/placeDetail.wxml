@@ -1,0 +1,13 @@
+<!--pages/placeDetail/placeDetail.wxml-->
+<view class="container">
+  <view class="shop-container">
+    <image class="shop-image" src="{{place.pictureUrls}}"></image>
+    <view class="shop-details">
+      <view class="shop-name">{{place.name}}</view>
+      <view class="shop-category">🏷️#{{place.category}}</view>
+      <view class="shop-business-hours">{{place.bushour}}</view>
+      <view class="shop-description">{{place.desc}}</view>
+      <view class="shop-address">🚩{{place.address}}</view>
+    </view>
+  </view>
+</view>

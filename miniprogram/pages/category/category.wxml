@@ -10,15 +10,16 @@
     </block>
   </view>
 
-  <!-- 动画测试 -->
-  <!-- <view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view> -->
-
   <!-- 分类内容 -->
   <view class="image-container" scroll-y="true">
     <block wx:for="{{places}}" wx:key="{{index}}">
-      <view class="image-wrapper" animation="{{animationItem}}">
-        <image src="{{item.pictureUrls}}" mode="widthFix" data-title="{{item.name}}" data-index="{{index}}" bindtap="imageTap"/>
-        <view class="image-title">{{item.name}}</view>
+      <view class="place-wrapper" data-id="{{item._id}}" data-title="{{item.name}}" data-index="{{index}}" bindtap="placeTap">
+        <image src="{{item.pictureUrls}}" mode="aspectFill" />
+        <view class="place-info">
+          <view class="image-title">{{item.name}}</view>
+          <view class="place-des">{{item.desc}}</view>
+          <view class="place-addr">🚩{{item.address}}</view>
+        </view>
       </view>
     </block>
   </view>

@@ -15,18 +15,22 @@ Page({
     imageCount: 0,
     title: '',
     content: '',
-    isTagActive: false,
+    // isTagActive: false,
+    // selectedIds: [],
   },
 
   // 获取点击的标签
   onTagTap: function(e) {
-    const tag = e.currentTarget.dataset.index
+    const index = e.currentTarget.dataset.index
+    // const selectedIds = this.data.selectedIds
+    // selectedIds.push(index)
     // console.log(tag)
     const selectedTags = this.data.selectedTags
-    selectedTags.push(tag)
+    selectedTags.push(this.data.tags[index])
     this.setData({
       selectedTags: selectedTags,
-      isTagActive: !this.data.isTagActive
+      // selectedIds: selectedIds
+      // isTagActive: !this.data.isTagActive
     })
     // console.log(this.data.selectedTags)
   },

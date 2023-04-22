@@ -34,6 +34,15 @@ Page({
     places: []
   },
 
+  // place点击跳转详情
+  placeTap: function(e) {
+    const placeId = e.currentTarget.dataset.id
+    // console.log(placeId)
+    wx.navigateTo({
+      url: `/pages/placeDetail/placeDetail?placeId=${placeId}`,
+    })
+  },
+
   updatePlaces: async function(e) {
     this.setData({
       places: []
@@ -79,7 +88,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: async function (options) {
-    console.log(options.cat)  // 路由参数
+    // console.log(options.cat)  // 路由参数
     await this.getPlaces(5, 1, options.cat)
   },
 

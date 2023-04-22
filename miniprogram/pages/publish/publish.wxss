@@ -72,13 +72,14 @@
 .image-preview-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: right;
+  justify-content:left;
+  padding: 18rpx;
 }
 
 .image-preview {
   width: 230rpx;
   height: 230rpx;
-  margin-right: 10rpx;
+  margin-right: 11rpx;
   margin-bottom: 10rpx;
   border-radius: 15rpx;
 }

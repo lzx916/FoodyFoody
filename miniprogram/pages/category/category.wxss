@@ -2,13 +2,15 @@
 page {
   background-color: #f1f1f1;
 }
-.categoryList{
+
+.categoryList {
   width: 100%;
   height: 350rpx;
-  border-bottom:10rpx solid #f4f4f4; 
+  border-bottom: 10rpx solid #f4f4f4;
   background-color: white;
 }
-.category-info{
+
+.category-info {
   display: inline-block;
   text-align: center;
   position: relative;
@@ -16,11 +18,13 @@ page {
   height: 150rpx;
   width: 25%;
 }
-.category-image{
+
+.category-image {
   width: 95rpx;
   height: 95rpx;
 }
-.category-text{
+
+.category-text {
   font-size: 25rpx;
   width: 100%;
   line-height: 30rpx
@@ -33,57 +37,56 @@ page {
   background-color: #f1f1f1;
 }
 
-.image-wrapper {
+.place-wrapper {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   margin: 5px;
   padding: 10px;
   border-radius: 10px;
+  /* width: 670rpx; */
   width: 90%;
-  max-width: 500px;
+  /* max-width: 500px; */
   background-color: white;
 }
 
-.image-wrapper image {
-  flex-basis: 80%;
-  /* width: 30%; */
-  /* height: 100px; */
-  object-fit: cover;
+.place-wrapper image {
+  /* flex-basis: 80%; */
+  /* width: 470rpx; */
+  width: 70%;
+  height: 380rpx;
+  /* object-fit: cover; */
   margin-right: 10px;
   border-radius: 5px;
 }
 
+.place-info {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .image-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 18px;
   font-weight: bold;
-  font-family:  cursive;
-}
-/* 
-.image-wrapper .image-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 14px;
+  font-family: cursive;
   text-align: center;
-  padding: 5px;
-  box-sizing: border-box;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-} */
-
-/* .image-wrapper:hover .image-title {
-  opacity: 1;
-} */
-
-/* .image-wrapper image {
-  width: 200px;
-  height: 200px;
-  transition: all 0.3s ease-in-out;
 }
 
-.image-wrapper image.active {
-  transform: scale(1.2);
-} */
+.place-addr {
+  font-size: 30rpx;
+}
+
+.place-des {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  font-size: 30rpx;
+  /* color: ; */
+}
