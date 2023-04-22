@@ -93,7 +93,7 @@ Page({
     let oldArticles = this.data.articles  // 翻页数据拼接
     let newArticles = oldArticles.concat(res.result.data)
     this.setData({ articles: newArticles })
-    console.log(this.data.articles)
+    // console.log(this.data.articles)
   },
 
   /**
@@ -123,7 +123,7 @@ Page({
         avatarUrl: userInfo.avatarUrl,
         // hasUserInfo: true
       })
-      console.log(userInfo)
+      // console.log(userInfo)
     }else{
       this.setData({
         isShowAddPersonView: true
