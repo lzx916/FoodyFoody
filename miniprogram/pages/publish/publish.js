@@ -16,22 +16,35 @@ Page({
     title: '',
     content: '',
     // isTagActive: false,
-    // selectedIds: [],
+    selectedIds: [],
   },
 
   // 获取点击的标签
-  onTagTap: function(e) {
+  onTagTap: function (e) {
+    const self = this
+    // const selectedTags = self.data.selectedTags
     const index = e.currentTarget.dataset.index
-    // const selectedIds = this.data.selectedIds
-    // selectedIds.push(index)
-    // console.log(tag)
-    const selectedTags = this.data.selectedTags
-    selectedTags.push(this.data.tags[index])
-    this.setData({
-      selectedTags: selectedTags,
-      // selectedIds: selectedIds
-      // isTagActive: !this.data.isTagActive
-    })
+    let flag = true // 用于判断selectedIds中是否存在了选中的标签index
+    for (let i = 0; i < self.data.selectedIds.length; i++) { //判断是否存在selectedIds中
+      if (self.data.selectedIds[i] === index) {
+        self.data.selectedIds.splice(i, 1); // 已经选择了就移除
+        self.data.selectedTags.splice(i, 1)
+        self.setData({ // 重新渲染
+          selectedIds: self.data.selectedIds,
+          selectedTags: self.data.selectedTags
+        })
+        flag = false;
+        break; // 如果已经存在,一定要终止循环
+      }
+    }
+    if (flag) { // 不存在,则添加index和tag
+      self.data.selectedIds.push(index);
+      self.data.selectedTags.push(self.data.tags[index])
+      self.setData({
+        selectedIds: self.data.selectedIds,
+        selectedTags: self.data.selectedTags
+      })
+    }
     // console.log(this.data.selectedTags)
   },
 
@@ -52,17 +65,17 @@ Page({
       },
       success: res => {
         // console.log(res)
-          wx.showToast({
-            icon: 'success',
-            title: '发布成功🤞',
-          });
-          setTimeout(() => {
-            wx.hideToast()
-            //关闭提示后跳转
-            wx.switchTab({
-              url: '../homelzx/homelzx',
-            })
-          }, 1500);
+        wx.showToast({
+          icon: 'success',
+          title: '发布成功🤞',
+        });
+        setTimeout(() => {
+          wx.hideToast()
+          //关闭提示后跳转
+          wx.switchTab({
+            url: '../homelzx/homelzx',
+          })
+        }, 1500);
         this.setData({
           title: '',
           content: '',
@@ -73,7 +86,7 @@ Page({
       fail: err => {
         console.error('[云函数]调用失败', err)
       },
-      complete: res => { }
+      complete: res => {}
     })
   },
 
@@ -112,10 +125,14 @@ Page({
           cloudPath: 'media/' + new Date().getTime() + '.' + tempFilePath.split('.').pop(),
           filePath: tempFilePath,
           success: res => {
-            console.log('上传成功', res.fileID);
+            // console.log('上传成功', res.fileID);
             let images = this.data.imageSrc
             images.push(res.fileID)
-            this.setData({ imageSrc: images })
+            let newImageCount = this.data.imageCount + 1
+            this.setData({
+              imageSrc: images,
+              imageCount: newImageCount
+            })
           },
           fail: console.error
         });

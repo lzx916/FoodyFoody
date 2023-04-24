@@ -1,0 +1,10 @@
+var include = function (index, array) {
+  for (var i = 0; i < array.length; ++i) {
+    if (array[i] === index) {
+      return true;
+    }
+  }
+  // console.log(index + ':' + flag);
+  return false;
+}
+module.exports.include = include;

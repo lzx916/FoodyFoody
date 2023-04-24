@@ -19,7 +19,7 @@
 }
 
 .tags-group {
-  height: 50px;
+  height: 50rpx;
   /* 设置高度 */
 }
 
@@ -28,7 +28,7 @@
   /* 使用 flex 布局 */
   white-space: nowrap;
   /* 不换行 */
-  height: 50px;
+  height: 50rpx;
   /* 设置高度 */
 }
 
@@ -73,20 +73,20 @@
   display: flex;
   flex-wrap: wrap;
   justify-content:left;
-  padding: 18rpx;
+  padding: 30rpx;
 }
 
 .image-preview {
-  width: 230rpx;
-  height: 230rpx;
-  margin-right: 11rpx;
+  width: 220rpx;
+  height: 220rpx;
+  margin-right: 10rpx;
   margin-bottom: 10rpx;
   border-radius: 15rpx;
 }
 
 .image-add {
   position: relative;
-  left: 20rpx;
+  left: 37rpx;
   width: 150rpx;
   height: 150rpx;
   margin-right: 10rpx;
@@ -98,6 +98,9 @@
   justify-content: center;
   font-size: 60rpx;
   color: #ccc;
+}
+.content {
+  margin-bottom: 10rpx;
 }
 
 .submit-btn-container {
